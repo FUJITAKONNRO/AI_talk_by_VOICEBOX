@@ -1,3 +1,4 @@
+import simpleaudio as sa
 import request_Gemini as rGem
 import request_VOICEVOX as rVOICE
 
@@ -12,3 +13,10 @@ with open("test.wav", "wb") as f:
     f.write(wav_data)
 
 print("OK: test.wav を出力しました")
+
+# 音声ファイルを再生
+wave_obj = sa.WaveObject.from_wave_file("test.wav")
+play_obj = wave_obj.play()
+play_obj.wait_done()
+
+print("再生が終了しました")
