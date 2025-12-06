@@ -1,25 +1,14 @@
-import requests
+import request_Gemini as rGem
+import request_VOICEVOX as rVOICE
 
-text = "こんにちは、これはテスト音声です。"
+# Gemini からテキストを取得
+prompt = "単語を３つ教えてください。"
+text = rGem.words(prompt)
 speaker = 1  # ずんだもん(ノーマル)
 
-# ① audio_query を取得
-query = requests.post(
-    "http://127.0.0.1:50021/audio_query",
-    params={"text": text, "speaker": speaker}
-)
-
-# ② synthesis（Content-Type を必ず指定）
-synthesis = requests.post(
-    "http://127.0.0.1:50021/synthesis",
-    params={"speaker": speaker},
-    data=query.text,  # ← json() ではなく text で渡す
-    headers={"Content-Type": "application/json"}
-)
-
-# ③ 出力
+# 音声ファイルを出力
+wav_data = rVOICE.voice(text, speaker)
 with open("test.wav", "wb") as f:
-    f.write(synthesis.content)
-print(query.status_code)
-print(query.text[:200])
+    f.write(wav_data)
+
 print("OK: test.wav を出力しました")
