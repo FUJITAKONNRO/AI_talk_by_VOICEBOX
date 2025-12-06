@@ -20,6 +20,6 @@ VOICEBOXと生成AIのAPIを連携させて、いろいろしゃべらせる。
 ・request_VOICEVOX.py  
     文字列の音声ファイル化のプロセスを担う。voicevox_engineに対してHTTPリクエストを送信し、文字列を音声ファイル化させる。  
 
-参考
+参考  
 [Quita VOICEVOXをDockerで起動する方法 2025/08/17 H. Ogawa 2025/12/6参照](https://qiita.com/h-ogawa/items/501d9294340b277e4008)  
 [Zenn Python経由でVoiceVoxの音声ファイルを作成する方法 2024/10/04 zenn_kiitos 2025/12/6参照](https://zenn.dev/zenn24yykiitos/articles/fff3c954ddf42c)  
