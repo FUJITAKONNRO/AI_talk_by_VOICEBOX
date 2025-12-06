@@ -23,3 +23,4 @@ VOICEBOXと生成AIのAPIを連携させて、いろいろしゃべらせる。
 参考  
 [Quita VOICEVOXをDockerで起動する方法 2025/08/17 H. Ogawa 2025/12/6参照](https://qiita.com/h-ogawa/items/501d9294340b277e4008)  
 [Zenn Python経由でVoiceVoxの音声ファイルを作成する方法 2024/10/04 zenn_kiitos 2025/12/6参照](https://zenn.dev/zenn24yykiitos/articles/fff3c954ddf42c)  
+[Quita READMEの使い方  2020/06/05 Mai@mzmz__02 2025/12/6参照](https://qiita.com/mzmz__02/items/b219c1592404eabda52d)  
