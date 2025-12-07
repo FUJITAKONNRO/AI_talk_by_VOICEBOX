@@ -2,11 +2,16 @@ import os
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
+from pydantic import BaseModel, Field
 
-# 1. .envファイルを読み込む
+#.envファイルを読み込む
 load_dotenv()
 
-# 2. クライアントの初期化
+# データの定義
+class WordList(BaseModel):
+    words: list[str] = Field(description="List of random words")
+
+#クライアントの初期化
 api_key = os.environ.get("GEMINI_API_KEY")
 
 if not api_key:
@@ -20,11 +25,15 @@ def words(prompt):
             model="gemini-2.5-flash", 
             contents=prompt, 
             config=types.GenerateContentConfig(
-                thinking_config=types.ThinkingConfig(thinking_budget=0) # Disables thinking
+                response_mime_type="application/json",
+                response_schema=WordList,
             ),
         )
-        print(response.text)
-        return response.text
+        result_data = response.parsed
+        print(f"JSONデータ: {response.text}")
+        print(f"リストとして取得: {result_data.words}")
+        return result_data.words
+    
     except Exception as e:
         print(f"エラーが発生しました: {e}")
-        return ""  # エラー時は空文字列を返す
+        return WordList(words=[])  # エラー時は空のリストを返す
