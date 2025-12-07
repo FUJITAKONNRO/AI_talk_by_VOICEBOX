@@ -33,8 +33,8 @@ def words(prompt ,history=[]):
             ),
         )
         result_data = response.parsed
-        print(f"JSONデータ: {response.text}")
-        print(f"リストとして取得: {result_data.words}")
+        #print(f"JSONデータ: {response.text}")
+        #print(f"リストとして取得: {result_data.words}")
         return result_data.words
     
     except Exception as e:

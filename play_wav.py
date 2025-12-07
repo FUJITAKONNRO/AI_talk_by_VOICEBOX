@@ -2,7 +2,7 @@ import simpleaudio as sa
 import request_Gemini as rGem
 import request_VOICEVOX as rVOICE
 
-speaker = 38  # ずんだもん(ひそひそ)
+speaker = 19  #九州そら(ひそひそ)
 
 prompt ="""
     思考シャッフル睡眠法（Cognitive Shuffle Sleep Method）に使用するため、
@@ -18,7 +18,7 @@ word_history = []
 
 while True:
 
-    print(f"---{cnt+1}回目---")
+    #print(f"---{cnt+1}回目---")
     # Gemini からテキストを取得
     text = rGem.words(prompt, word_history[-100:])
     word_history.extend(text)
@@ -29,16 +29,16 @@ while True:
         filename = f"text.wav"
         with open(filename, "wb") as f:
             f.write(wav_data)
-        print(f"{filename} を出力しました")
+        #print(f"{filename} を出力しました")
 
         # 生成した音声ファイルを再生
         filename = f"text.wav"
         wave_obj = sa.WaveObject.from_wave_file(filename)
         play_obj = wave_obj.play()
-        print(f"再生中: {word}")
+        #print(f"再生中: {word}")
         play_obj.wait_done()
         sa.sleep(12)  # 12秒待機
-    print("再生が終了しました")
+    #print("再生が終了しました")
 
     if cnt % 6 == 5:
         print("継続しますか？ (y/n): ", end="")

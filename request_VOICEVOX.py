@@ -21,14 +21,14 @@ def voice(text, speaker):
 #テスト用
 if __name__ == "__main__":
     sample_text = input("音声合成したいテキストを入力してください: ")
-    speaker_id = 19 # ずんだもん(ひそひそ)
+    speaker_id = 19 # 九州そら(ひそひそ)
     wav_data = voice(sample_text, speaker_id)
     with open("voicevox_test.wav", "wb") as f:
         f.write(wav_data)
-    print("voicevox_test.wav を出力しました")
+    #print("voicevox_test.wav を出力しました")
 
     # 生成した音声ファイルを再生
     wave_obj = sa.WaveObject.from_wave_file("voicevox_test.wav")
     play_obj = wave_obj.play()
     play_obj.wait_done()
-    print("再生が終了しました")
+    #print("再生が終了しました")
