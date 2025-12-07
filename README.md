@@ -20,7 +20,7 @@ VOICEBOXと生成AIのAPIを連携させて、いろいろしゃべらせる。
 ・request_VOICEVOX.py  
     文字列の音声ファイル化のプロセスを担う。voicevox_engineに対してHTTPリクエストを送信し、文字列を音声ファイル化させる。  
 
-仮想環境起動  　
+仮想環境起動  
 source venv/Scripts/activate　　
 
 VOICEVOX起動  
