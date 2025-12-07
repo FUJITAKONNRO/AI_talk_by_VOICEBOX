@@ -1,18 +1,23 @@
 # AI_talk_by_VOICEBOX
-VOICEBOXと生成AIのAPIを連携させて、ずんだもんにしゃべらせる。
+##VOICEBOXと生成AIのAPIを連携させて、ずんだもんにしゃべらせる。
 今回は思考シャッフル睡眠法に使えるように単語をランダムに読み上げるようにpromptを設計する。    
   
-使用するもの  
+#使用するもの  
 ・docker voicevox_engineの構築済みコンテナ もしくは　製品版VOICEVOX（[VOICEVOXサイトリンク](https://voicevox.hiroshiba.jp/)）  
 ・Gemini API 使用モデル:gemini-2.5-flash-lite  
 ・Python 3.9.13  
 ・pip version 22.0.4  
 
-構想  
+
+
+
+#構想  
 　Youtubeには特定の目的をもって単語を羅列する動画があるが、これを生成するプログラムが作成できるのではと思った。  
 　プログラムからGemini APIに対して文字列を生成するリクエストを送信し、これで得た文字列をテキストファイル等の適切な形に変形してVOICEBOX APIに送信することで音声ファイルを生成。これをプログラムが受け取り、再生する。  
 
-プログラム構成：  
+
+
+#プログラム構成：  
 ・play_wav.py  
     実行すると、文字列生成プロセスと音声ファイル化プロセスを呼び出し、生成された音声ファイルを再生する。  
     音声ファイルの再生がすべて終了すると再びプロセスをはじめから実行する。  
@@ -21,20 +26,25 @@ VOICEBOXと生成AIのAPIを連携させて、ずんだもんにしゃべらせ�
 ・request_VOICEVOX.py  
     文字列の音声ファイル化のプロセスを担う。voicevox_engineに対してHTTPリクエストを送信し、文字列を音声ファイル化させる。  
 
-●VOICEVOX_ENGINE構築済みdockerコンテナを起動:  
+
+
+
+#セットアップ
+
+##●VOICEVOX_ENGINE構築済みdockerコンテナを起動:  
 (docker voicevox_engineの構築済みコンテナを使う人)  
 docker pull voicevox/voicevox_engine:cpu-ubuntu20.04-latest  
 docker run -d -p 50021:50021 voicevox/voicevox_engine:cpu-latest  　
 docker ps #確認用  
 
-●VOICEVOX起動:  
+##●VOICEVOX起動:  
 (製品版VOICEVOXを使う人)  
 ダウンロードした製品版VIOCEVOXを起動する  
 
 
-[どちらもこれが閲覧できればOK](http://127.0.0.1:50021/docs#/)
+###[どちらもこれが閲覧できればOK](http://127.0.0.1:50021/docs#/)
 
-使用したpip:  
+##使用したpip:  
 pip install simpleaudio  
 pip install request  
 pip install -q -U google-genai  
@@ -72,7 +82,10 @@ typing-inspection  0.4.2
 urllib3            2.6.0  
 websockets         15.0.1  
 
-参考、引用記事  
+
+
+
+#参考、引用記事  
 [Quita. VOICEVOXをDockerで起動する方法. 2025/08/17. H. Ogawa. 2025/12/6.](https://qiita.com/h-ogawa/items/501d9294340b277e4008)  
 [Zenn.　【VOICEVOX,Docker】VOICEVOX ENGINEを建てる.　2025/03/29.　ずんずぃー.　2025/12/6.](https://zenn.dev/iwanorigoro/articles/9b9104b3513a56)  
 [Zenn. Python経由でVoiceVoxの音声ファイルを作成する方法. 2024/10/04. zenn_kiitos. 2025/12/6.](https://zenn.dev/zenn24yykiitos/articles/fff3c954ddf42c)  
