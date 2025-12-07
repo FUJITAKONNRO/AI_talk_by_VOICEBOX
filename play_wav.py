@@ -3,12 +3,11 @@ import request_Gemini as rGem
 import request_VOICEVOX as rVOICE
 
 # Gemini からテキストを取得
-prompt = "Please list three completely random, unrelated words in Japanese. Please output only the words, separated by spaces, without any descriptions or greetings."
+prompt = "Please list three completely random, unrelated words. Please output only the words, separated by spaces, without any descriptions or greetings. translate to Japanese."
 text = rGem.words(prompt)
 speaker = 1  # ずんだもん(ノーマル)
 
 # 音声ファイルをリストの要素ごとに生成して保存
-
 for i, word in enumerate(text):
     wav_data = rVOICE.voice(word, speaker)
     filename = f"test_{i}.wav"
