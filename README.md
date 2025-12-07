@@ -34,7 +34,8 @@ docker ps #確認用
 使用したpip  
 pip install simpleaudio  
 pip install request  
-pip install -q -U google-genai　　
+pip install -q -U google-genai  
+pip install python-dotenv  
 
 参考、引用記事  
 [Quita. VOICEVOXをDockerで起動する方法. 2025/08/17. H. Ogawa. 2025/12/6参照.](https://qiita.com/h-ogawa/items/501d9294340b277e4008)  
