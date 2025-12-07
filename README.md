@@ -91,6 +91,6 @@ websockets         15.0.1
 [Zenn.　【VOICEVOX,Docker】VOICEVOX ENGINEを建てる.　2025/03/29.　ずんずぃー.　2025/12/6.](https://zenn.dev/iwanorigoro/articles/9b9104b3513a56)  
 [Zenn. Python経由でVoiceVoxの音声ファイルを作成する方法. 2024/10/04. zenn_kiitos. 2025/12/6.](https://zenn.dev/zenn24yykiitos/articles/fff3c954ddf42c)  
 [Quita. READMEの使い方.  2020/06/05 Mai@mzmz__02. 2025/12/6.](https://qiita.com/mzmz__02/items/b219c1592404eabda52d)  
+[Quita. "Markdown記法 チートシート". Qiita キータ@Qiita. 2025/12/6.](https://qiita.com/Qiita/items/c686397e4a0f4f11683d)  
 [Quita. Pythonでサウンドを扱う.　2020/02/11. @hisshi00. 2025/12/6.](https://qiita.com/hisshi00/items/62c555095b8ff15f9dd2)  
 [Google. “Gemini API Quickstart”. Google AI for Developers. 2025/12/6.](https://ai.google.dev/gemini-api/docs/quickstart?hl=ja)  
-[Google. "Markdown記法 チートシート". Qiita キータ@Qiita. 2025/12/6.](https://qiita.com/Qiita/items/c686397e4a0f4f11683d)
