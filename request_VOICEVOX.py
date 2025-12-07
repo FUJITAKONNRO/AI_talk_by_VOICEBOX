@@ -1,4 +1,5 @@
 import requests
+import simpleaudio as sa
 
 def voice(text, speaker):
     # ① audio_query を取得
@@ -19,10 +20,14 @@ def voice(text, speaker):
 
 #テスト用
 if __name__ == "__main__":
-    sample_text = "こんにちは、これはVOICEVOXのテストです。"
-    speaker_id = 36  # ずんだもん(ささやき)
+    sample_text = input("音声合成したいテキストを入力してください: ")
+    speaker_id = 33 #白上虎太郎(びくびく)
     wav_data = voice(sample_text, speaker_id)
     with open("voicevox_test.wav", "wb") as f:
         f.write(wav_data)
     print("voicevox_test.wav を出力しました")
-    
+    # 生成した音声ファイルを再生
+    wave_obj = sa.WaveObject.from_wave_file("voicevox_test.wav")
+    play_obj = wave_obj.play()
+    play_obj.wait_done()
+    print("再生が終了しました")
