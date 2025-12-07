@@ -3,7 +3,7 @@ import request_Gemini as rGem
 import request_VOICEVOX as rVOICE
 
 # Gemini からテキストを取得
-prompt = "単語を３つ教えてください。"
+prompt = "Please list three completely random, unrelated words in Japanese. Please output only the words, separated by spaces, without any descriptions or greetings."
 text = rGem.words(prompt)
 speaker = 1  # ずんだもん(ノーマル)
 

@@ -1,20 +1,30 @@
 import os
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from dotenv import load_dotenv
 
 # 1. .envファイルを読み込む
 load_dotenv()
 
-# 2. 環境変数からAPIキーを取得する
-api_key = os.getenv("GOOGLE_API_KEY")
+# 2. クライアントの初期化
+api_key = os.environ.get("GEMINI_API_KEY")
 
 if not api_key:
-    raise ValueError("APIキーが見つかりません。.envファイルを確認してください。")
+    raise ValueError("APIキーが見つかりません。.envを確認してください")
 
-# 3. Geminiの設定
-genai.configure(api_key=api_key)
+client = genai.Client(api_key=api_key)
 
-# 4. 実行テスト
-model = genai.GenerativeModel('gemini-1.5-flash')
-response = model.generate_content("Pythonの.envファイルとは何ですか？一言で答えて。")
-print(response.text)
+def words(prompt):
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash", 
+            contents=prompt, 
+            config=types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=0) # Disables thinking
+            ),
+        )
+        print(response.text)
+        return response.text
+    except Exception as e:
+        print(f"エラーが発生しました: {e}")
+        return ""  # エラー時は空文字列を返す

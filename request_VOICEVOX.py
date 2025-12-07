@@ -11,7 +11,7 @@ def voice(text, speaker):
     synthesis = requests.post(
         "http://127.0.0.1:50021/synthesis",
         params={"speaker": speaker},
-        data=query.text,  # ← json() ではなく text で渡す
+        data=query.text,
         headers={"Content-Type": "application/json"}
     )
 
