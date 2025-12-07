@@ -19,10 +19,13 @@ if not api_key:
 
 client = genai.Client(api_key=api_key)
 
-def words(prompt):
+def words(prompt ,history=[]):
+    # 既に出力した単語リストをプロンプトに追加し重複を避ける
+    words_history_str = "\n".join(history)
+    prompt = f"{prompt}\n既に出力した単語リストからは重複しないようにしてください:\n{words_history_str}\n"
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash", 
+            model="gemini-2.5-flash-lite", 
             contents=prompt, 
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
