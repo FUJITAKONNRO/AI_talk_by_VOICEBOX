@@ -17,3 +17,12 @@ def voice(text, speaker):
 
     return synthesis.content
 
+#テスト用
+if __name__ == "__main__":
+    sample_text = "こんにちは、これはVOICEVOXのテストです。"
+    speaker_id = 36  # ずんだもん(ささやき)
+    wav_data = voice(sample_text, speaker_id)
+    with open("voicevox_test.wav", "wb") as f:
+        f.write(wav_data)
+    print("voicevox_test.wav を出力しました")
+    
