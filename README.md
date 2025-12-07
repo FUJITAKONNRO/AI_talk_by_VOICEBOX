@@ -42,7 +42,8 @@ docker ps #確認用
 ダウンロードした製品版VIOCEVOXを起動する  
 
 
-### [どちらもこれが閲覧できればOK](http://127.0.0.1:50021/docs#/)
+### どちらもこれが閲覧できればOK  
+#### http://127.0.0.1:50021/docs#/
 
 ## 使用したpip:  
 pip install simpleaudio  
