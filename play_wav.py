@@ -2,7 +2,7 @@ import simpleaudio as sa
 import request_Gemini as rGem
 import request_VOICEVOX as rVOICE
 
-speaker = 22  # ずんだもん(ノーマル)
+speaker = 38  # ずんだもん(ひそひそ)
 
 prompt ="""
     思考シャッフル睡眠法（Cognitive Shuffle Sleep Method）に使用するため、

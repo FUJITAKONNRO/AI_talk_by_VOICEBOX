@@ -1,5 +1,5 @@
 # AI_talk_by_VOICEBOX
-## VOICEBOXと生成AIのAPIを連携させて、ずんだもんにしゃべらせる。
+## VOICEBOXと生成AIのAPIを連携させて、~~ずんだもん~~ *九州そら*にしゃべらせる。
 今回は思考シャッフル睡眠法に使えるように単語をランダムに読み上げるようにpromptを設計する。    
   
 # 使用するもの  
@@ -18,12 +18,12 @@
 
 
 # プログラム構成：  
-・play_wav.py  
+## ・play_wav.py  
     実行すると、文字列生成プロセスと音声ファイル化プロセスを呼び出し、生成された音声ファイルを再生する。  
     音声ファイルの再生がすべて終了すると再びプロセスをはじめから実行する。  
-・request_Gemini.py  
+## ・request_Gemini.py  
     文字列生成プロセスを担う。Gemini apiを用いてpromptに合致した文字列を生成し、json形式で結果を返す。  
-・request_VOICEVOX.py  
+## ・request_VOICEVOX.py  
     文字列の音声ファイル化のプロセスを担う。voicevox_engineに対してHTTPリクエストを送信し、文字列を音声ファイル化させる。  
 
 
@@ -31,14 +31,12 @@
 
 # セットアップ
 
-## ●VOICEVOX_ENGINE構築済みdockerコンテナを起動:  
-(docker voicevox_engineの構築済みコンテナを使う人)  
+## ●VOICEVOX_ENGINE構築済みdockerコンテナを起動(docker voicevox_engineの構築済みコンテナを使う人):  
 docker pull voicevox/voicevox_engine:cpu-ubuntu20.04-latest  
 docker run -d -p 50021:50021 voicevox/voicevox_engine:cpu-latest  　
 docker ps #確認用  
 
-## ●VOICEVOX起動:  
-(製品版VOICEVOXを使う人)  
+## ●VOICEVOX起動(製品版VOICEVOXを使う人):  
 ダウンロードした製品版VIOCEVOXを起動する  
 
 

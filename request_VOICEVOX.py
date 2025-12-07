@@ -21,7 +21,7 @@ def voice(text, speaker):
 #テスト用
 if __name__ == "__main__":
     sample_text = input("音声合成したいテキストを入力してください: ")
-    speaker_id = 22 # ずんだもん(ひそひそ)
+    speaker_id = 19 # ずんだもん(ひそひそ)
     wav_data = voice(sample_text, speaker_id)
     with open("voicevox_test.wav", "wb") as f:
         f.write(wav_data)
