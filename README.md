@@ -30,7 +30,7 @@
 
 
 # セットアップ
-
+ source venv39/Scripts/activate
 ## ●VOICEVOX_ENGINE構築済みdockerコンテナを起動(docker voicevox_engineの構築済みコンテナを使う人):  
 docker pull voicevox/voicevox_engine:cpu-ubuntu20.04-latest  
 docker run -d -p 50021:50021 voicevox/voicevox_engine:cpu-latest  
